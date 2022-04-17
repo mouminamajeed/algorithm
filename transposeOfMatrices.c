@@ -7,23 +7,35 @@ int main() {
   scanf("%d", &c);
 
   printf("\nEnter elements of 1st matrix:\n");
-  for (i = 0; i < r; ++i)
-    for (j = 0; j < c; ++j) {
+  for (i=0; i<r; ++i)
+    for (j=0; j<c; ++j) {
       scanf("%d", &a[i][j]);
     }
-  for (i = 0; i < r; ++i)
-    for (j = 0; j < c; ++j) {
-    b[i][j]=a[j][i];
-    }
-  printf("\nmatrices after transpose is : \n");
-  for (i = 0; i < r; ++i)
-  {
-    for (j = 0; j < c; ++j) {
-      printf("%d   ", b[i][j]);
+    
+     printf("\nmatrices before transpose is : \n");
+     for (i= 0; i<r; ++i)
+      {
+        for (j=0; j<c; ++j) {
+        printf("%d  ",a[i][j]);
+        }
+       printf("\n");
       }
-      printf("\n");
-    }
- ps=9*r*c+3*c+10*r+25;
- printf("Number of program steps =%d",ps);
-  return 0;
-}
+     //computing transpose
+      for (i=0; i<r; ++i)
+	  {
+        for (j=0; j<c; ++j) {
+           b[j][i]=a[i][j];
+        }
+      }
+      printf("\nmatrices after transpose is : \n");
+       for (i=0; i<c; ++i)
+       {
+         for (j=0; j<r; ++j) {
+         printf("%d  ",b[i][j]);
+         }
+         printf("\n");
+       }
+       ps=9*r*c+3*c+10*r+18;
+       printf("Number of program steps =%d",ps);
+      return 0;
+   }
